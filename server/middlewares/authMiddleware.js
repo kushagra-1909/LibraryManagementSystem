@@ -19,7 +19,7 @@ module.exports = function (req, res, next) {
   } catch (error) {
     return res.send({
       success: false,
-      message: error,
+      message: error.message,
     });
   }
 };
