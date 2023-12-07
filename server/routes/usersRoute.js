@@ -32,7 +32,7 @@ router.post("/register", async (req, res) => {
   } catch (error) {
     return res.send({
       success: false,
-      message: error,
+      message: error.message,
     });
   }
 });
