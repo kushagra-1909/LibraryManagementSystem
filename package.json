@@ -17,6 +17,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.0",
     "nodemon": "^2.0.22",
-    "validator": "^13.11.0"
+    "validator": "^13.11.0",
+     "cors": "^2.8.5",
+
   }
 }
