@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
+const cors=require('cors');
 
 const authMiddleware = require("./middlewares/authMiddleware");
 app.use(express.json());
+app.use(cors());
 
 const usersRoute = require("./routes/usersRoute");
 const booksRoute = require("./routes/booksRoute");
