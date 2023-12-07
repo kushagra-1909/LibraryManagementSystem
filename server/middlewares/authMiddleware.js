@@ -43,21 +43,22 @@ const jwt = require("jsonwebtoken");
 module.exports = function (req, res, next) {
   try {
     console.log(req.headers); // Log headers for debugging
+
     const authorizationHeader = req.headers.authorization;
 
-    if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
+    if (!authorizationHeader) {
       return res.status(401).json({
         success: false,
-        message: "Authorization header missing or invalid",
+        message: "Authorization header missing",
       });
     }
 
     const token = authorizationHeader.split(" ")[1];
 
-    if (!token) {
+    if (!token || !authorizationHeader.startsWith("Bearer ")) {
       return res.status(401).json({
         success: false,
-        message: "Token not found in authorization header",
+        message: "Token not found or invalid format",
       });
     }
 
